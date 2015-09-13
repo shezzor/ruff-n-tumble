@@ -1,6 +1,6 @@
 {
   "name": "ruff-n-tumble-canvas",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Ruff n Tumble Remake using js and canvas",
   "main": "index.js",
   "scripts": {
