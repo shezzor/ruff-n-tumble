@@ -4,17 +4,14 @@ requirejs(
 		'engine/engine', 
 		'rnt/game'	
 	], 
-	function(Engine, Game) {
-		var rntEngine = new Engine({
-				container: 'content', 
-				width: 640, 
-				height: 480,
-				fps: 60
-		});
+	function(BBEngine, RnTGame) {
+		var game = new RnTGame(),
+		    engine = new BBEngine(game);
 		
-		if (rntEngine.init())
-		{
-			rntEngine.start();
+		if (engine.init()) {
+			engine.start();
+		} else {
+			engine.fail();
 		}
 	}
 );

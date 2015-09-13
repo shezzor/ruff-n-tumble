@@ -1,8 +1,8 @@
 define([
-		'engine/sprite',
+		'engine/entity',
 		'engine/tilemap'
 	],
-	function(Sprites, TileMaps) {
+	function(Entity, TileMaps) {
 		var renderer = function(options) {
 			
 			// Default values
@@ -23,10 +23,11 @@ define([
 					document.getElementById(this.container).appendChild(this.viewport);
 					this.context = this.viewport.getContext('2d');
 				} else {
+					console.log("renderer init: failed");
 					return false;
 				}
 
-				console.log("renderer init");
+				console.log("renderer init: successful");
 				
 				return true;
 			},
@@ -37,6 +38,9 @@ define([
 				}
 				
 				this.context.fillRect(0, 0, this.viewport.width, this.viewport.height);
+			},
+			
+			render: function() {
 			},
 			
 			flip: function() {

@@ -7,9 +7,44 @@ body {
   	overflow: hidden;
 }
 
-.container {
-	margin-left: auto;
-	margin-right: auto;
+#container {
+	margin: 0 auto;
 	width: 860px;
 	position: relative;
+}
+
+#header {
+	width: 860px;
+}
+
+#content { 
+	width: 642px;
+    height: 482px;
+	border: 1px solid #253636;
+	clear: both;
+	margin: 0 auto;
+	padding: 1px;
+}
+
+#gameScreen {
+    width: 640px;
+    height: 480px;
+    border: 1px solid #000;
+}
+
+.small {
+	margin-top: 20px;
+	float: right;
+	font-size: 12px;
+}
+
+#info > ul {
+	list-style: none;
+}
+
+#info > ul li {
+	display: inline-block;
+	margin: 5px;
+	padding: 5px;
+	cursor: pointer;
 }

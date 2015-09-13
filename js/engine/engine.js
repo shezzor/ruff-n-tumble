@@ -2,13 +2,18 @@ define([
 		'engine/render',
 		'engine/input',
 		'engine/audio',
-		'engine/object',
-		'engine/loader'
+		'engine/entity',
+		'engine/resources'
 	],
-	function(Renderer, Audio, Input, Objects, Loader) {
-		var engine = function(options) {		
-			this.renderer = new Renderer(options);
-			this.loader = new Loader(options);
+	function(Renderer, Audio, Input, Entity, Resources) 
+	{
+		var engine = function(game) 
+		{		
+			this.game = game;
+			this.renderer = new Renderer(game.settings.viewport);
+			this.resources = new Resources(game.settings.resources);
+			this.input = new Input(game.settings.input);
+			this.audio = new Audio();
 		}
 
 		engine.prototype = {
@@ -17,7 +22,16 @@ define([
 			// modules
 			
 			init: function() {
-			 	//ensure browser supports required features
+			 	/* Primary reason here is to 
+			       ensure browser supports required features
+				 
+				   - Canvas
+				   - Javascript functions
+				   - Image
+				   - Sound
+				   - Input
+				   
+				 */
 				if (!this.renderer.init()) {
 					return false;
 				}
@@ -25,13 +39,18 @@ define([
 				return true;
 			},
 			
-			mainloop: function() {
-				
+			main: function() {
+				this.game.main();
 			},
 			
 			start: function() {
-				alert('yes');
+				//this.renderer.drawSprite()
 				//setInterval(this.mainloop, 1000/this.options.fps);
+				console.log("Engine Started...");
+			},
+			
+			fail: function() {
+				
 			}
 			
 		}
