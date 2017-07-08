@@ -1,0 +1,10 @@
+# Build
+.vs/
+build/
+bld/
+bin/
+obj/
+*.user
+*.suo
+*.map
+*.orig
