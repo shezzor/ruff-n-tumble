@@ -10,10 +10,13 @@ define([
 		var engine = function(game) 
 		{		
 			this.game = game;
-			this.renderer = new Renderer(game.settings.viewport);
-			this.resources = new Resources(game.settings.resources);
-			this.input = new Input(game.settings.input);
-			this.audio = new Audio();
+			this.debug = game.settings.options.debug;
+			this.
+			
+			this.renderer = new Renderer(game.settings.viewport, this.debug);
+			this.resources = new Resources(game.settings.resources, this.debug);
+			this.input = new Input(game.settings.input, this.debug);
+			this.audio = new Audio(game.settings.audio, this.debug);
 		}
 
 		engine.prototype = {
@@ -40,19 +43,33 @@ define([
 			},
 			
 			main: function() {
+				this.lastFrameTime = Date.now();
 				this.game.main();
+				
+				requestAnimationFrame(this.main);
 			},
 			
 			start: function() {
 				//this.renderer.drawSprite()
 				//setInterval(this.mainloop, 1000/this.options.fps);
-				console.log("Engine Started...");
+				if (this.game.options.debug) 
+				{
+					console.log('Engine Started...');
+					console.log('Initialising Game...');
+				}
+				
+				console.log (this.game)
+				
+				this.game.init();
 			},
 			
 			fail: function() {
 				
 			}
-			
+		}
+		
+		engine.options = function() {
+			return this.options;
 		}
 		
 		return engine;

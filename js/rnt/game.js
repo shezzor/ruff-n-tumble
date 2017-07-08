@@ -1,5 +1,6 @@
 define([
 		'rnt/player',
+		'rnt/bullet',
 		'rnt/level'
 	], function(Player, Level) 
 	{
@@ -12,6 +13,18 @@ define([
 				INGAME: 3,
 				GAMEOVER: 4
 			});
+			
+			var gameState = gameStates.INIT;
+						
+			this.entities = {
+				particles: [],
+				bullets: [],
+				pickUps: [],
+				enemies: [],
+				objects: []
+			};
+			
+			this.levels = [];
 					
 			this.settings = {
 				// Information
@@ -36,7 +49,8 @@ define([
 						gridWidth: 66,
 						gridHeight: 88
 					}],
-					sounds: []
+					audio: [],
+					json: []
 				},
 			
 				viewport: {
@@ -47,14 +61,22 @@ define([
 				},
 				
 				input: {
-					left: 0,
-					right: 0,
-					up: 0,
-					down: 0,
+					left: 37,
+					right: 39,
+					up: 38,
+					down: 40,
 					buttons: {
-						jump: 0,
-						fire: 0
+						jump: 90,
+						fire: 88
 					}
+				},
+				
+				options: {
+					sound: false,
+					soundVolume: 100,
+					musicVolume: 100,
+					godMode: true,
+					debug: true	
 				}	
 			}
 			
@@ -62,19 +84,37 @@ define([
 		};
 		
 		game.prototype = {
-			/*
-				State loops
-			 */
+		 
 			main: function() {
 				switch(this.state)
 				{
 					case this.gameStates.INIT:
+						return this.init();
+						break;
+						
+					case this.gameStates.LOADING:
+						return this.loading();
+						break;
+						
+					case this.gameStates.INGAME:
+						return this.inGame();
 						break;
 				}
 					
 			},
 			 
 			loadingScreen: function() {
+				
+			},
+			
+			/*
+			 *  State loops
+			 */
+			init: function() {
+				
+			},
+			
+			loading: function() {
 				
 			},
 			
@@ -94,3 +134,5 @@ define([
 		return game;
 	}
 );
+
+BorderBrush="#FFFF7814"

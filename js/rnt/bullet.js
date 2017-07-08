@@ -2,10 +2,10 @@ define(
 	[
 	], 
 	function() {
-		var level = function() {
+		var bullet = function() {
 			
 		}
 		
-		return level;
+		return bullet;
 	}
 );

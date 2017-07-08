@@ -2,11 +2,11 @@ define(
 	[
 		'engine/resources'
 	], 
-	function() {
+	function(Resources) {
 		var sprite = function() {
-			
+				
 		}
-		
+	
 		return sprite; 
 	}
 	

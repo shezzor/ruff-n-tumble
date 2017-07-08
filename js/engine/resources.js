@@ -8,9 +8,6 @@ define(
 			this.filecount = 0 || resources.images.length;
 			this.filedone = 0;
 			this.sounds = []
-			
-			console.log(resources.images);
-			console.log(this.files);
 		};
 			
 		resources.prototype = {
@@ -31,7 +28,8 @@ define(
 				{
 					this.images[i].image = this.createImage(this.images[i].src);
 					
-					delete this.images[i].src;
+					// Meh, not sure this is needed
+					//delete this.images[i].src;
 				}
 				
 				return true;

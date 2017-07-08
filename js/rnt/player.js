@@ -61,6 +61,28 @@ define(
 		player.ticker = Date.now();
 		player.dustTicker = Date.now();
 		
+		player.consts = {
+			JUMPPEAK: 14,       	/*Amount of highest rise before you start to fall*/
+			JUMPSPEED: -7,       	/*Speed in which you jump/fall*/
+			JUMPFALL: 10,
+
+			RIGHTCHECK:	40,
+			LEFTCHECK: 13,
+			FOOTMAPLIMIT: 11,
+
+			FALLHEIGHT:	16
+		};
+		
+		player.animations = {
+			jump: [],
+			duck: [10, 16, 10, 0],
+			hurt: [],
+			death: [],
+			teleport: []
+		};
+		
+		
+		
 		return player; 
 	}
 	

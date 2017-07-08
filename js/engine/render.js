@@ -1,9 +1,9 @@
 define([
-		'engine/entity',
-		'engine/tilemap'
-	],
-	function(Entity, TileMaps) {
-		var renderer = function(options) {
+	'engine/entity',
+	'engine/tilemap'
+],
+	function (Entity, TileMaps) {
+		var renderer = function (options, debug) {
 			
 			// Default values
 			this.viewport = document.createElement('canvas');
@@ -11,15 +11,14 @@ define([
 			this.viewport.width = options.width || 320;
 			this.viewport.height = options.height || 240;
 			this.context = null;
-			
+
 			this.container = options.container;
 			this.fps = options.fps || 60;
 		}
 
-		renderer.prototype = {	
-			init: function() {	
-				if (this.viewport.getContext)
-				{	
+		renderer.prototype = {
+			init: function () {
+				if (this.viewport.getContext) {
 					document.getElementById(this.container).appendChild(this.viewport);
 					this.context = this.viewport.getContext('2d');
 				} else {
@@ -31,23 +30,23 @@ define([
 				
 				return true;
 			},
-			
-			clear: function(style) {
+
+			clear: function (style) {
 				if (style) {
 					this.context.fillStyle = style;
 				}
-				
+
 				this.context.fillRect(0, 0, this.viewport.width, this.viewport.height);
 			},
-			
-			render: function() {
+
+			render: function () {
 			},
-			
-			flip: function() {
-				
+
+			flip: function () {
+
 			}
 		}
-		
+
 		return renderer;
 	}
 );

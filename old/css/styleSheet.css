@@ -1,0 +1,61 @@
+@font-face {
+    font-family: DeliciousRoman;
+    src: url(http://www.font-face.com/fonts/Delicious/Delicious-Roman.ttf);
+    font-weight: 400;
+}
+
+body {
+	margin: 0px;
+    background-color: black;
+	color: white;
+	font-family: DeliciousRoman, Helvetica, Arial, sans-serif;
+	height: 100%;
+  	overflow: hidden;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 860px;
+	position: relative;
+}
+
+.small {
+	margin-top: 20px;
+	float: right;
+	font-size: 12px;
+}
+
+#header {
+	width: 860px;
+}
+
+#content { 
+	width: 642px;
+    height: 482px;
+	border: 1px solid #253636;
+	clear: both;
+	margin: 0 auto;
+	padding: 1px;
+}
+
+#gameScreen {
+    width: 640px;
+    height: 480px;
+    border: 1px solid #000;
+}
+
+#instructions ul {
+	list-style: none;
+}
+
+#history {
+	height: 200px;
+	overflow-y: scroll;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+
