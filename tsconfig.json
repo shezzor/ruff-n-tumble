@@ -1,0 +1,22 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny" : true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "es6",
+    "module": "commonjs",
+    "noEmitOnError": true,
+    "mapRoot": "/",
+    "sourceRoot": "/",
+    "outFile": "js/rnt-remake.js"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
