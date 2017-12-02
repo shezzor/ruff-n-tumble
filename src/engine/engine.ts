@@ -1,5 +1,0 @@
-module BBEngine 
-{
-  public canvas: 
-
-}
