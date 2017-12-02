@@ -2,7 +2,11 @@
   "name": "ruff-n-tumble-canvas",
   "version": "0.0.1",
   "description": "Ruff n Tumble Remake using TypeScript and HTML5 features",
-  "author": "Anthony Sherratt",
+  "author": {
+    "name": "Anthony Sherratt",
+    "email": "contact@anthonysherratt.co.uk",
+    "url": "http://www.anthonysherratt.co.uk"
+  },
   "homepage": "https://github.com/shezzor/RnTRemake-Canvas#readme",
   "repository": {
     "type": "git",
@@ -24,6 +28,7 @@
     "url": "https://github.com/shezzor/RnTRemake-Canvas/issues"
   },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

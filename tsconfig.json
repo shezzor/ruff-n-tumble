@@ -8,7 +8,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "noEmitOnError": true,
-    "outFile": "bbEngine.js"
+    "outDir": "js"
   },
   "files": [
     "src/main.ts"
