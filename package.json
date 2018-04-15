@@ -28,8 +28,7 @@
     "url": "https://github.com/shezzor/RnTRemake-Canvas/issues"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "devDependencies": {
     "typescript": "2.6.2"

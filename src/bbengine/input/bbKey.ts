@@ -16,7 +16,7 @@ export class bbKey
     this.update(event);
   }
 
-  public update(event: KeyboardEvent)
+  public update(event: KeyboardEvent): void
   {
     if (this.preventDefault)
     {

@@ -4,13 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Ruff n Tumble Remake - Canvas</title>
-  <link href="css/site.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      background: #000;
+    }
+  </style>
 </head>
 <body>
-  <div id="container">
-    <canvas id="rnt-game"></canvas>
-  </div>
-  <script src="js/bbengine.js"></script>
-  <script src="js/rntgame.js"></script>
+  <div id="rnt-viewport"></div>
+  <script data-main="js/main" src="js/require.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ export class bbKeyboard
     document.body.addEventListener('keyup', (event: KeyboardEvent) => this.onKeyPress(event), false);
   }
 
-  private onKeyPress(event: KeyboardEvent)
+  private onKeyPress(event: KeyboardEvent): void
   {
     if (this._keys[event.keyCode])
     {
@@ -23,12 +23,12 @@ export class bbKeyboard
     }
   }
 
-  public isDown(keycode: bbKeyCode)
+  public isDown(keycode: bbKeyCode): boolean
   {
     return this._keys[keycode].isPressed;
   }
 
-  public isUp(keycode: bbKeyCode)
+  public isUp(keycode: bbKeyCode): boolean
   {
     return !this._keys[keycode].isPressed;
   }
