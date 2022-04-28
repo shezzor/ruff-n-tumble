@@ -1,36 +1,38 @@
 {
-  "name": "ruff-n-tumble-canvas",
-  "version": "0.0.1",
-  "description": "Ruff n Tumble Remake using TypeScript and HTML5 features",
-  "author": {
-    "name": "Anthony Sherratt",
-    "email": "contact@anthonysherratt.co.uk",
-    "url": "http://www.anthonysherratt.co.uk"
-  },
-  "homepage": "https://github.com/shezzor/RnTRemake-Canvas#readme",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/shezzor/RnTRemake-Canvas.git"
-  },
+  "name": "ruff-n-tumble",
+  "version": "0.1.0",
+  "author": "Anthony Sherratt <contact@anthonysherratt.co.uk>",
+  "description": "Recreation attempt of the Amiga Ruff n Tumble game using web technologies",
+  "private": true,
+  "type": "module",
   "main": "index.js",
+  "license": "MIT",
   "keywords": [
-    "ruff",
-    "tumble",
     "remake",
-    "canvas",
-    "game",
-    "typescript",
-    "javascript"
+    "game"
   ],
-
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shezzor/RnTRemake-Canvas/issues"
-  },
   "scripts": {
-    "build": "tsc"
+    "build": "esbuild ./src/index.js --bundle --format=esm --minify --outfile=./public/dist/build.js",
+    "start": "node ./scripts/dev-serve.js",
+    "format": "eslint --fix \"src/**/*.ts\"",
+    "lint": "eslint --fix-dry-run \"src/**/*.ts\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "../../.eslintrc"
+    ]
+  },
+  "dependencies": {
+    "bb-engine": ">0.0.1"
   },
   "devDependencies": {
-    "typescript": "2.6.2"
+    "@typescript-eslint/eslint-plugin": "5.18.0",
+    "@typescript-eslint/parser": "5.18.0",
+    "chokidar": "3.5.3",
+    "esbuild": "0.14.27",
+    "eslint": "8.13.0",
+    "five-server": "0.1.3",
+    "typescript": "4.6.2"
   }
 }
+

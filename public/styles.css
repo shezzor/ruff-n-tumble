@@ -1,0 +1,64 @@
+html {
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  margin: auto;
+}
+
+canvas {
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: attr(width) / attr(height);
+}
+
+main > button {
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+  background-color: #AAA;
+  border: none;
+  transition: opacity 250ms ease;
+  opacity: 0.4;
+}
+
+main > button::after {
+  content: '💾';
+  color: #444;
+  font-size: 10vh;
+}
+
+main > button.load-completed:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.load-completed::after {
+  content: '▶';
+  padding-left: 2vh;
+}
+
+@supports (image-rendering: pixelated) {
+  canvas {
+    image-rendering: pixelated;
+  }
+}
+
+@supports (image-rendering: crisp-edges) {
+  canvas {
+    image-rendering: crisp-edges;
+  }
+}

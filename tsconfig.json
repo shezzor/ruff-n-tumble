@@ -1,20 +1,13 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es5",
-    "module": "amd",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "noEmitOnError": true,
-    "outDir": "js"
-  },
-  "files": [
-    "src/main.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+    "baseUrl": "src/",
+    "outDir": "../public/dist",
+    "allowJs": true,
+    "strict": true,
+    "target": "es2020",
+    "module": "es2020",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+  }
 }

@@ -1,4 +1,6 @@
-.vscode
-*.js
-*.map
-/.vs
+node_modules
+public/dist
+
+# temp files
+public/sfx/original
+public/gfx/arcade
