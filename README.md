@@ -1,4 +1,4 @@
-# RnTRemake-Canvas
+# Ruff n Tumble Remake
 
 A remake an the old Amiga platform game, Ruff n Tumble using TypeScript and HTML5 features.
 
